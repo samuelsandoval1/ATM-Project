@@ -6,9 +6,8 @@ const int TRIES = 3;
 /* This is a functional Bank Simulator where a user can visit their bank through
 this and perform functions such as withdraw money, add money, and see all their transactions. */
 
-float Check_Balance(float balance){
+void Check_Balance(float balance){
   cout << "Your balance is: $"<< balance << endl;
-  return balance;
 }
 
 float Deposit(float balance){
@@ -76,7 +75,7 @@ int main(int argc, char* argv[]) {
   }
   while(password != pin);
 
-  while(choice != 4 ){
+  while(choice != 4) {
     cout<< "What would you like to do next?"<< endl;
     cout << "1 - Check Balance" << endl;
     cout << "2 - Deposit Cash" << endl;
@@ -85,13 +84,13 @@ int main(int argc, char* argv[]) {
     cout << ": ";
     cin >> choice;
 
-    if(choice == 1){
-      balance = Check_Balance(balance);
+    if(choice == 1) {
+      Check_Balance(balance);
     }
-    else if(choice == 2){
+    else if(choice == 2) {
       balance = Deposit(balance);
     }
-    else if(choice == 3){
+    else if(choice == 3) {
       balance = Withdraw(balance);
     }
   }
