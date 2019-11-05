@@ -15,8 +15,19 @@ float Deposit(float balance){
   float new_amount;
   cout << "Enter an amount to deposit: " << endl;
   cin >> amount;
-  new_amount = balance + amount;
-  cout << "Your account now has a balance of " << new_amount << endl;
+  if(amount < 0){
+    cout << "Please enter a valid amount $ " << endl;
+    cin >> amount;
+    new_amount = balance + amount;
+    cout << "Your account now has a balance of $" << new_amount << endl;
+    return new_amount;
+  }
+  else{
+    new_amount = balance + amount;
+    cout << "Your account now has a balance of $" << new_amount << endl;
+    return new_amount;
+
+  }
 return new_amount;
 }
 
@@ -30,7 +41,7 @@ float Withdraw(float balance){
   cin >> amount;
   if(amount > balance) {
     cout << "Insufficient funds." << endl;
-    cout << "Would you like to withdraw " << better_amount << " instead? (y/n)?  ";
+    cout << "Would you like to withdraw: $" << better_amount << " instead? (y/n)?  ";
     cin >> response;
     do {
       cout << "(y/n) ";
@@ -38,7 +49,7 @@ float Withdraw(float balance){
     } while(response != 'n' && response != 'y');
     if (response == 'y'){
       new_amount = balance + better_amount;
-      cout << "Thank You! Your account has now a balance of " << new_amount << endl;
+      cout << "Thank You! Your account has now a balance of $" << new_amount << endl;
       return new_amount;
     }
   }
