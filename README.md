@@ -1,4 +1,4 @@
-# Bank ATM Project
+# Bank ATM Simulator
 
 
 A basic command-line Automated Teller Machine simulator that allows the user to perform a variety of actions, such as
